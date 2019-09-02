@@ -2,9 +2,9 @@
   <v-app>
     <v-content>
         <v-navigation-drawer app dark v-model="show" class="pt-12 pl-4 mr-12">
-          <div class="text-center">
-            <v-avatar size="100">
-              <img :src="profilePic" alt="avatar" :v-show="profileStatus">
+          <div class="text-center" >
+            <v-avatar size="100" >
+              <img :src="profilePic" alt="avatar">
             </v-avatar>
           </div>
         <v-list-item>
@@ -32,7 +32,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title><v-btn text to="/about">Home</v-btn></v-list-item-title>
+              <v-list-item-title><v-btn text to="/">Home</v-btn></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -47,11 +47,11 @@
             </v-list-item-content>
           </v-list-item>
         </v-list> 
-        <div class="pa-2">
-          <v-btn class='ma-2' outlined>{{loginStatus}}</v-btn>
+        <div class="pa-4 ml-6 mt-8">
+          <v-btn class='mr-8' outlined to="">{{loginStatus}}</v-btn>
         </div>
-        <div class="pa-2">
-          <v-btn class="ma-2" outlined>{{signupStatus}}</v-btn>
+        <div class="pa-4 ml-6">
+          <v-btn class="mr-8" outlined to="/signup">{{signupStatus}}</v-btn>
         </div>
           
       
@@ -95,7 +95,7 @@ export default Vue.extend({
   name: 'App',
   
   data: () => ({
-    show: false,
+    show: true,
     signupStatus: 'Sign up',
     loginStatus: 'Log In',
     profilePic: './components/logo.png',
@@ -104,13 +104,16 @@ export default Vue.extend({
     
   }),
   computed:()=>({
-    profileStatus: function () {
-      if(this.name !=''){
-        return true
-      }else{
-        return false
-      }
-    }
+    // profileStatus: function () {
+    //   // if(this.name !=''){
+        
+    //   //   return true
+    //   // }else{
+    //   //   alert('false')
+    //   //   return false
+    //   // }
+     
+    // }
   }),
 });
 </script>
